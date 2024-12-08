@@ -1,0 +1,131 @@
+@use "@/styles/index" as *;
+
+.pokemon-card {
+  background-color: var(--color-card);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-card-hover);
+  }
+
+  &__image-container {
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+
+  &__content {
+    padding: var(--spacing-md);
+    position: relative;
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    margin: 0;
+    text-transform: capitalize;
+    color: var(--color-text);
+  }
+
+  &__types {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+  }
+
+  &__type {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 16px;
+    font-size: 0.875rem;
+    color: white;
+    text-transform: capitalize;
+
+    &--grass {
+      background-color: #9bcc50;
+    }
+    &--fire {
+      background-color: #fd7d24;
+    }
+    &--water {
+      background-color: #4592c4;
+    }
+    &--bug {
+      background-color: #729f3f;
+    }
+    &--normal {
+      background-color: #a4acaf;
+    }
+    &--poison {
+      background-color: #b97fc9;
+    }
+    &--electric {
+      background-color: #eed535;
+    }
+    &--ground {
+      background-color: #ab9842;
+    }
+    &--fairy {
+      background-color: #fdb9e9;
+    }
+    &--fighting {
+      background-color: #d56723;
+    }
+    &--psychic {
+      background-color: #f366b9;
+    }
+    &--rock {
+      background-color: #a38c21;
+    }
+    &--ghost {
+      background-color: #7b62a3;
+    }
+    &--ice {
+      background-color: #51c4e7;
+    }
+    &--dragon {
+      background-color: #f16e57;
+    }
+    &--dark {
+      background-color: #707070;
+    }
+    &--steel {
+      background-color: #9eb7b8;
+    }
+    &--flying {
+      background-color: #3dc7ef;
+    }
+  }
+
+  &__favorite-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    padding: var(--spacing-xs);
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--active {
+      color: var(--color-primary);
+    }
+  }
+}
