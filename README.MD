@@ -163,10 +163,30 @@ No se requieren variables de entorno para el funcionamiento básico de la aplica
 
 ## Posibles Mejoras Futuras
 
-1. Implementar PWA
-2. Añadir más filtros de búsqueda
-3. Implementar comparación de Pokémon
-4. Añadir animaciones más elaboradas
-5. Mejorar la accesibilidad
-6. Añadir tests unitarios y de integración
-7. Implementar internacionalización
+1. **Linting y Formatting**
+
+   - Implementar ESLint con configuración personalizada
+   - Configurar Prettier para formateo consistente
+   - Añadir reglas específicas para TypeScript
+   - Integrar plugin de ESLint para React Hooks
+
+2. **Git Hooks con Husky**
+
+   - Pre-commit: Ejecutar lint-staged
+   - Pre-push: Ejecutar tests
+   - Commit-msg: Validar formato de commits (Conventional Commits)
+   - Configurar lint-staged para optimizar el proceso
+
+3. **Automatización**
+
+   - GitHub Actions para CI/CD
+   - Validaciones automáticas en PRs
+   - Release automático con semantic-release
+
+4. Implementar PWA
+5. Añadir más filtros de búsqueda
+6. Implementar comparación de Pokémon
+7. Añadir animaciones más elaboradas
+8. Mejorar la accesibilidad
+9. Añadir tests unitarios y de integración
+10. Implementar internacionalización
