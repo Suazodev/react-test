@@ -141,13 +141,13 @@ La aplicación consume la PokeAPI (https://pokeapi.co/), implementando:
 git clone [url-del-repositorio]
 
 # Instalar dependencias
-bun install
+bun/npm/pnpm install
 
 # Ejecutar en desarrollo
-bun dev
+bun/npm/pnpm dev
 
 # Construir para producción
-bun run build
+bun/npm/pnpm run build
 ```
 
 ## Variables de Entorno
