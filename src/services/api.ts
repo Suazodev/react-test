@@ -23,19 +23,8 @@ const API = {
         endpoint,
         config
       );
-
-      if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "production") {
-        console.log("GET request successful:", response.data);
-      }
-
       return { data: response.data, status: response.status };
     } catch (error: any) {
-      if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "production") {
-        console.error(
-          "GET request failed:",
-          error?.response?.data || error.message
-        );
-      }
       throw error;
     }
   },
@@ -51,19 +40,8 @@ const API = {
         data,
         config
       );
-
-      if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "production") {
-        console.log("POST request successful:", response.data);
-      }
-
       return { data: response.data, status: response.status };
     } catch (error: any) {
-      if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "production") {
-        console.error(
-          "POST request failed:",
-          error?.response?.data || error.message
-        );
-      }
       throw error;
     }
   },
@@ -79,19 +57,8 @@ const API = {
         data,
         config
       );
-
-      if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "production") {
-        console.log("PUT request successful:", response.data);
-      }
-
       return { data: response.data, status: response.status };
     } catch (error: any) {
-      if (process.env.NEXT_PUBLIC_ENVIRONMENT !== "production") {
-        console.error(
-          "PUT request failed:",
-          error?.response?.data || error.message
-        );
-      }
       throw error;
     }
   },

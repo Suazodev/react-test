@@ -94,6 +94,7 @@ src/
    - Uso eficiente de la caché
 
 3. **Estado**
+
    - Gestión centralizada con Zustand
    - Persistencia local para favoritos
    - Estado de búsqueda global
@@ -130,6 +131,7 @@ La aplicación consume la PokeAPI (https://pokeapi.co/), implementando:
    - Código limpio y mantenible
 
 3. **Rendimiento**
+
    - Lazy loading de rutas
    - Optimización de re-renders
    - Caché eficiente
@@ -163,6 +165,7 @@ No se requieren variables de entorno para el funcionamiento básico de la aplica
 1. **Linting y Formatting**
 
    - Implementar ESLint con configuración personalizada
+   - Implementar 'stylelint-selector-bem-pattern' para el linter de bem
    - Configurar Prettier para formateo consistente
    - Añadir reglas específicas para TypeScript
    - Integrar plugin de ESLint para React Hooks
