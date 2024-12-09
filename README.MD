@@ -145,9 +145,6 @@ bun/npm/pnpm install
 
 # Ejecutar en desarrollo
 bun/npm/pnpm dev
-
-# Construir para producción
-bun/npm/pnpm run build
 ```
 
 ## Variables de Entorno
