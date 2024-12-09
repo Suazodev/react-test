@@ -1,10 +1,11 @@
 import { useEffect, useRef, useCallback } from "react";
-import { usePokemonList } from "../../api/pokemon-queries";
 import { usePokemonStore } from "../../store/usePokemonStore";
 import "./PokemonList.scss";
 import { PokemonCard } from "../../components/pokemon-card/PokemonCard";
+import { usePokemonHook } from "../../hooks/usePokemonHook";
 
 export const PokemonList = () => {
+  const { usePokemonList } = usePokemonHook();
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     usePokemonList();
   const { searchQuery } = usePokemonStore();

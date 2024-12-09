@@ -46,26 +46,3 @@ export const pokemonApi = {
     return data;
   },
 };
-
-export const usePokemonList = () => {
-  return useInfiniteQuery({
-    queryKey: ["pokemon-list"],
-    queryFn: ({ pageParam = 0 }) => pokemonApi.getList(pageParam),
-    getNextPageParam: (lastPage, allPages) => {
-      const nextPage = allPages.length;
-      return lastPage.total > nextPage * 20 ? nextPage : undefined;
-    },
-    initialPageParam: 0,
-    staleTime: 5 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-  });
-};
-
-export const usePokemonDetails = (id: string) => {
-  return useQuery({
-    queryKey: ["pokemon", id],
-    queryFn: () => pokemonApi.getById(id),
-    staleTime: 5 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-  });
-};

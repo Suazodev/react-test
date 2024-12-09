@@ -1,18 +1,25 @@
-import { usePokemonDetails } from "../../api/pokemon-queries";
 import { usePokemonStore } from "../../store/usePokemonStore";
 import { useNavigate } from "@tanstack/react-router";
 import "./PokemonDetails.scss";
+import { usePokemonHook } from "../../hooks/usePokemonHook";
 
 interface PokemonDetailsProps {
   id: string;
 }
 
 export const PokemonDetails = ({ id }: PokemonDetailsProps) => {
-  const { data: pokemon, isLoading, isError } = usePokemonDetails(id);
+  const { usePokemonDetails } = usePokemonHook();
   const { addToFavorites, removeFromFavorites, isFavorite } = usePokemonStore();
   const navigate = useNavigate();
 
-  if (isLoading) {
+  const {
+    data: pokemon,
+    isLoading,
+    isFetching,
+    isError,
+  } = usePokemonDetails(id);
+
+  if (isLoading || isFetching) {
     return <div className="pokemon-details__loading">Cargando...</div>;
   }
 
