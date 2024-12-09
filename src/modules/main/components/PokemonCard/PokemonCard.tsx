@@ -2,17 +2,18 @@ import { usePokemonStore } from "../../store/usePokemonStore";
 import { useNavigate } from "@tanstack/react-router";
 import { SimplePokemon } from "../../types/pokemon";
 import "./PokemonCard.scss";
+import { MouseEvent } from "react";
 
 interface PokemonCardProps {
   pokemon: SimplePokemon;
 }
 
-export const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
+export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   const { addToFavorites, removeFromFavorites, isFavorite } = usePokemonStore();
   const navigate = useNavigate();
   const favorite = isFavorite(pokemon.id);
 
-  const handleFavoriteClick = (e: React.MouseEvent) => {
+  const handleFavoriteClick = (e: MouseEvent) => {
     e.stopPropagation();
     if (favorite) {
       removeFromFavorites(pokemon.id);

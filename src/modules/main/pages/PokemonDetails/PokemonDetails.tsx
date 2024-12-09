@@ -7,7 +7,7 @@ interface PokemonDetailsProps {
   id: string;
 }
 
-export const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
+export const PokemonDetails = ({ id }: PokemonDetailsProps) => {
   const { data: pokemon, isLoading, isError } = usePokemonDetails(id);
   const { addToFavorites, removeFromFavorites, isFavorite } = usePokemonStore();
   const navigate = useNavigate();
