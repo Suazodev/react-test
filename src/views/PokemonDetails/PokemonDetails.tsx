@@ -1,4 +1,4 @@
-import { usePokemonDetails } from "../../api/queries";
+import { usePokemonDetails } from "../../api/pokemon-queries";
 import { usePokemonStore } from "../../store/usePokemonStore";
 import { useNavigate } from "@tanstack/react-router";
 import "./PokemonDetails.scss";

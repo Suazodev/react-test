@@ -1,8 +1,8 @@
 import { useEffect, useRef, useCallback } from "react";
-import { usePokemonList } from "../../api/queries";
+import { usePokemonList } from "../../api/pokemon-queries";
 import { usePokemonStore } from "../../store/usePokemonStore";
 import "./PokemonList.scss";
-import { PokemonCard } from "../../components/PokemonCard/PokemonCard";
+import { PokemonCard } from "../../components/pokemon-card/PokemonCard";
 
 export const PokemonList = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =

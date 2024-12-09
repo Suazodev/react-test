@@ -4,7 +4,7 @@ import {
   createRootRoute,
   useMatchRoute,
 } from "@tanstack/react-router";
-import { Navbar } from "../shared/components/navbar/Navbar";
+import { Navbar } from "../components/navbar/Navbar";
 
 export const Route = createRootRoute({
   component: RootComponent,

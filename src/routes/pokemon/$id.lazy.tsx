@@ -1,5 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { PokemonDetails } from "../../modules/main/pages/PokemonDetails/PokemonDetails";
+import { PokemonDetails } from "../../main/pages/PokemonDetails/PokemonDetails";
 
 export const Route = createLazyFileRoute("/pokemon/$id")({
   component: PokemonDetailsPage,

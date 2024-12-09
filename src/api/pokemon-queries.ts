@@ -1,32 +1,9 @@
-import axios from "axios";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { Pokemon } from "../types/pokemon";
+import { Pokemon, PokemonListResponse, SimplePokemon } from "../types/pokemon";
+import API from "../services/api";
 
 const API_BASE_URL = "https://pokeapi.co/api/v2";
 const ITEMS_PER_PAGE = 20;
-
-interface SimplePokemon {
-  id: number;
-  name: string;
-  sprites: {
-    front_default: string;
-  };
-  types: Array<{
-    type: {
-      name: string;
-    };
-  }>;
-}
-
-interface PokemonListResponse {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Array<{
-    name: string;
-    url: string;
-  }>;
-}
 
 export const pokemonApi = {
   getList: async (
@@ -36,13 +13,13 @@ export const pokemonApi = {
     total: number;
   }> => {
     const offset = page * ITEMS_PER_PAGE;
-    const { data } = await axios.get<PokemonListResponse>(
+    const { data } = await API.getData<PokemonListResponse>(
       `${API_BASE_URL}/pokemon?offset=${offset}&limit=${ITEMS_PER_PAGE}`
     );
 
     const pokemons = await Promise.all(
       data.results.map(async (pokemon) => {
-        const { data: pokemonData } = await axios.get<SimplePokemon>(
+        const { data: pokemonData } = await API.getData<SimplePokemon>(
           pokemon.url
         );
         return {
@@ -63,7 +40,9 @@ export const pokemonApi = {
   },
 
   getById: async (id: string): Promise<Pokemon> => {
-    const { data } = await axios.get<Pokemon>(`${API_BASE_URL}/pokemon/${id}`);
+    const { data } = await API.getData<Pokemon>(
+      `${API_BASE_URL}/pokemon/${id}`
+    );
     return data;
   },
 };

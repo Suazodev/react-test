@@ -1,5 +1,5 @@
 import { usePokemonStore } from "../../store/usePokemonStore";
-import { PokemonCard } from "../../components/PokemonCard/PokemonCard";
+import { PokemonCard } from "../../components/pokemon-card/PokemonCard";
 import "./FavoritesList.scss";
 
 export const FavoritesList = () => {
